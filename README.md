@@ -1,9 +1,9 @@
 <h1 align="center">
   <img src="https://img.shields.io/badge/Made%20With-Laravel-blue?logo=laravel&style=for-the-badge" alt="Made with Laravel" />
   <br />
-  <b>Nombre de la Aplicación</b>
+  <b>App utilizando CRUD</b>
   <br />
-  <sub>Amazing application built with Laravel</sub>
+  <sub>App construida con Laravel</sub>
 </h1>
 
 <p align="center">
@@ -34,6 +34,10 @@
 ## 🚀 Instalación
 
 Sigue los pasos a continuación para instalar y configurar esta aplicación en tu entorno local.
+
+### Inicio
+
+Dirigete a la carpeta en la que quieras clonar mi repositorio, por ejemplo Desktop
 
 ### Clonar el repositorio
 
