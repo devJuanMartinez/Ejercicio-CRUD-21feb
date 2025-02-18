@@ -72,3 +72,28 @@ DB_DATABASE=nombre_de_tu_base_de_datos
 DB_USERNAME=nombre_de_usuario
 DB_PASSWORD=contraseña
 ````
+### Generar la clave de la aplicación
+Genera la clave de la aplicación con el siguiente comando:
+
+```bash
+php artisan key:generate
+````
+
+### Migraciones y Seeders
+Ejecuta las migraciones y los seeders para configurar tu base de datos:
+
+```bash
+php artisan migrate --seed
+````
+
+### Iniciar el servidor
+Finalmente, inicia el servidor local de Laravel:
+
+```bash
+php artisan serve
+````
+Tu aplicación estará disponible en http://localhost:8000.
+
+
+
+
