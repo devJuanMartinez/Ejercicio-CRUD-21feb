@@ -32,16 +32,18 @@
 ---
 
 ## 🚀 Instalación
-
 Sigue los pasos a continuación para instalar y configurar esta aplicación en tu entorno local.
 
 ### Inicio
-
 Dirigete a la carpeta en la que quieras clonar mi repositorio, por ejemplo Desktop
 
 ### Clonar el repositorio
-
 ```bash
 git clone https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/devJuanMartinez/Ejercicio-CRUD-21feb.git
 
+### Instalar dependencias
+Instala las dependencias utilizando Composer para Laravel:
+
+```bash
+composer install
 
