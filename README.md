@@ -7,7 +7,7 @@
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/tu-usuario/nombre-del-repositorio?color=blue&style=for-the-badge" alt="Top Language" />
+  <img src="https://img.shields.io/github/languages/top/devjuanmartinez/Ejercicio-CRUD-21feb?color=blue&style=for-the-badge" alt="Top Language" />
   <img src="https://img.shields.io/github/issues/tu-usuario/nombre-del-repositorio?style=for-the-badge" alt="Issues" />
   <img src="https://img.shields.io/github/license/tu-usuario/nombre-del-repositorio?style=for-the-badge" alt="License" />
 </p>
