@@ -42,6 +42,6 @@ Dirigete a la carpeta en la que quieras clonar mi repositorio, por ejemplo Deskt
 ### Clonar el repositorio
 
 ```bash
-git clone https://github.com/tu-usuario/nombre-del-repositorio.git
-cd nombre-del-repositorio
+git clone https://github.com/tu-usuario/nombre-del-repositorio.git](https://github.com/devJuanMartinez/Ejercicio-CRUD-21feb.git
+
 
