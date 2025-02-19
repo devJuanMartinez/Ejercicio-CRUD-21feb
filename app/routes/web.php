@@ -46,13 +46,31 @@ Route::middleware('auth')->resource('productos', ProductoController::class);
 // Rutas Producto
 Route::resource('productos', ProductoController::class)->middleware('auth');
 
-// Rutas Post
-// Route::resource('posts', PostController::class)->middleware('auth');
+// Route::get('/productos/list', [ProductoController::class, 'list'])->name('productos.list');
+
+// Route::prefix('productos')->group(function() {
+//     Route::get('list', [ProductoController::class, 'list'])->name('productos.list');
+// });
+
+
+Route::get('/productos/list', [ProductoController::class, 'list'])->name('productos.list');
+
+
+
+
 
 Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 // Ruta para ver los posts
 Route::middleware('auth')->get('/posts', [PostController::class, 'index'])->name('posts.index');
 
+Route::middleware('auth')->group(function () {
+    Route::get('/productos/admin', [ProductoController::class, 'adminIndex'])->name('productos.admin');
+});
+
+Route::get('/admin/productos', [ProductoController::class, 'adminIndex'])
+    ->name('productos.admin')
+    ->middleware('auth'); // Solo accesible si está autenticado
+;
 
 
 

@@ -19,6 +19,34 @@ class ProductoController extends Controller
         return view('productos.index', compact('productos'));
     }
 
+    public function adminIndex()
+    {
+        // Obtener todos los productos con el usuario asociado
+        $productos = Producto::with('user')->get();
+
+        return view('productos.admin', compact('productos'));
+
+    }
+
+    public function list()
+    {
+        // Obtener todos los productos
+        $productos = Producto::all();
+    
+        // Retornar la vista con los productos
+        return view('productos.list', compact('productos'));
+    }
+    
+
+
+
+
+    public function show(Producto $producto)
+    {
+        return view('productos.admin', compact('producto'));
+    }
+
+
     public function create()
     {
         return view('productos.create');
@@ -51,22 +79,34 @@ class ProductoController extends Controller
 
     public function update(Request $request, Producto $producto)
     {
-        // Verificamos si el usuario tiene permiso para actualizar el producto
-        $this->authorize('update', $producto);
+        $request->validate([
+            'nombre' => 'required|string|max:255',
+            'descripcion' => 'required|string',
+        ]);
 
-        $producto->update($request->only('nombre', 'descripcion'));
+        $producto->update($request->all());
 
-        return redirect()->route('productos.index');
+        if (Auth::user()->rol === 'admin') {
+            return redirect()->route('productos.admin')->with('success', 'Producto actualizado correctamente.');
+        }
+
+        return redirect()->route('productos.index')->with('success', 'Producto actualizado correctamente.');
     }
+
 
     public function destroy(Producto $producto)
     {
-        // Verificamos si el usuario tiene permiso para eliminar el producto
-        $this->authorize('delete', $producto);
-
         $producto->delete();
 
-        return redirect()->route('productos.index');
+        if (Auth::user()->rol === 'admin') {
+            return redirect()->route('productos.admin')->with('success', 'Producto eliminado correctamente.');
+        }
+
+        return redirect()->route('productos.index')->with('success', 'Producto eliminado correctamente.');
     }
+
+
+
+
 
 }

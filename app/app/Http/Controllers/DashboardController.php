@@ -14,14 +14,21 @@ class DashboardController extends Controller
     }
 
     // Método para mostrar la vista del dashboard
+    // public function index()
+    // {
+    //     Obtén el usuario autenticado
+    //     $user = Auth::user(); 
+
+    //     Pasa el usuario a la vista
+    //     return view('dashboard', compact('user'));
+    // }
+
+
     public function index()
     {
-        // Obtén el usuario autenticado
-        $user = Auth::user(); 
-
-        // Pasa el usuario a la vista
-        return view('dashboard', compact('user'));
+        return view('dashboard', ['user' => Auth::user()]);
     }
+
 }
 
 
