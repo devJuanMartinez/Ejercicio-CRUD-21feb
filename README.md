@@ -3,7 +3,7 @@
   <br />
   <b>App utilizando CRUD</b>
   <br />
-  <sub>App construida con Laravel</sub>
+  <sub>Manual de instalación</sub>
 </h1>
 
 <p align="center">
