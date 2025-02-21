@@ -15,7 +15,6 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        // Mapea el modelo Producto a su respectiva política
         Producto::class => ProductoPolicy::class,
     ];
 
@@ -26,7 +25,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Registra las políticas
         $this->registerPolicies();
         
         // Aquí puedes registrar otras lógicas de autorización personalizadas si las necesitas

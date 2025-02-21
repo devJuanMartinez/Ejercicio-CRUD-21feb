@@ -8,8 +8,7 @@ class ProductoRequest extends FormRequest
 {
     public function authorize()
     {
-        // Esto debería retornar true para permitir que la solicitud pase, normalmente aquí haces chequeo de roles
-        return true; // Cambia esto según tus necesidades
+        return true; 
     }
 
     public function rules()
@@ -18,7 +17,6 @@ class ProductoRequest extends FormRequest
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'price' => 'required|numeric|min:0',
-            // Añade otras reglas de validación según tu modelo
         ];
     }
 }

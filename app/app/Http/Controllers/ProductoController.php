@@ -4,24 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth; // Importa Auth
+use Illuminate\Support\Facades\Auth; 
 
 class ProductoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth'); // Solo usuarios autenticados pueden acceder
+        $this->middleware('auth'); 
     }
 
     public function index()
     {
-        $productos = Producto::where('user_id', Auth::id())->get(); // Solo productos del usuario autenticado
+        $productos = Producto::where('user_id', Auth::id())->get(); 
         return view('productos.index', compact('productos'));
     }
 
     public function adminIndex()
     {
-        // Obtener todos los productos con el usuario asociado
         $productos = Producto::with('user')->get();
 
         return view('productos.admin', compact('productos'));
@@ -30,10 +29,8 @@ class ProductoController extends Controller
 
     public function list()
     {
-        // Obtener todos los productos
         $productos = Producto::all();
     
-        // Retornar la vista con los productos
         return view('productos.list', compact('productos'));
     }
     
@@ -70,7 +67,7 @@ class ProductoController extends Controller
 
     public function edit(Producto $producto)
     {
-        if ($producto->user_id != Auth::id() && Auth::user()->rol !== 'admin') { // Cambié 'role' por 'rol'
+        if ($producto->user_id != Auth::id() && Auth::user()->rol !== 'admin') { 
             return redirect()->route('productos.index');
         }
 
